@@ -1,4 +1,4 @@
-# Droperia - Electronics Price Comparison
+# Price-Compare - Electronics Price Comparison
 
 A modern web application that compares electronics prices across different e-commerce platforms and tracks price history.
 

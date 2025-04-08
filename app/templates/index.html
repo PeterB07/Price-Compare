@@ -1,0 +1,178 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container-fluid px-4">
+    <!-- Hero Section -->
+    <div class="row align-items-center py-5">
+        <div class="col-md-6">
+            <h1 class="display-3 fw-bold mb-4">
+                <span class="text-primary">Smart</span> Price Comparison
+            </h1>
+            <p class="lead mb-4">Compare prices across major electronics stores and track price history to make informed buying decisions.</p>
+            <div class="search-box mb-4">
+                <div class="input-group input-group-lg">
+                    <input type="text" id="searchInput" class="form-control rounded-start-pill" 
+                           placeholder="Search for electronics (e.g., iPhone 13, Samsung TV)">
+                    <button class="btn btn-primary btn-lg rounded-end-pill px-4" type="button" id="searchButton">
+                        <i class="bi bi-search me-2"></i> Compare Now
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <img src="https://source.unsplash.com/featured/800x600/?electronics,technology" 
+                 class="img-fluid rounded-4 shadow" alt="Electronics Shopping">
+        </div>
+    </div>
+
+    <!-- Popular Categories -->
+    <div class="row mt-5">
+        <div class="col-12">
+            <h2 class="mb-4">Popular Categories</h2>
+        </div>
+        <div class="col-md-3 mb-4">
+            <div class="card h-100 border-0 shadow-sm rounded-4 category-card" 
+                 onclick="quickSearch('smartphone')">
+                <div class="card-body text-center p-4">
+                    <div class="category-icon mb-3">
+                        <i class="bi bi-phone display-1 text-primary"></i>
+                    </div>
+                    <h3 class="h5 mb-3">Smartphones</h3>
+                    <p class="text-muted mb-0">Compare latest mobile phones</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-4">
+            <div class="card h-100 border-0 shadow-sm rounded-4 category-card" 
+                 onclick="quickSearch('laptop')">
+                <div class="card-body text-center p-4">
+                    <div class="category-icon mb-3">
+                        <i class="bi bi-laptop display-1 text-primary"></i>
+                    </div>
+                    <h3 class="h5 mb-3">Laptops</h3>
+                    <p class="text-muted mb-0">Find the best laptop deals</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-4">
+            <div class="card h-100 border-0 shadow-sm rounded-4 category-card" 
+                 onclick="quickSearch('smartwatch')">
+                <div class="card-body text-center p-4">
+                    <div class="category-icon mb-3">
+                        <i class="bi bi-smartwatch display-1 text-primary"></i>
+                    </div>
+                    <h3 class="h5 mb-3">Smartwatches</h3>
+                    <p class="text-muted mb-0">Track wearable prices</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-4">
+            <div class="card h-100 border-0 shadow-sm rounded-4 category-card" 
+                 onclick="quickSearch('headphones')">
+                <div class="card-body text-center p-4">
+                    <div class="category-icon mb-3">
+                        <i class="bi bi-headphones display-1 text-primary"></i>
+                    </div>
+                    <h3 class="h5 mb-3">Headphones</h3>
+                    <p class="text-muted mb-0">Compare audio devices</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="row mt-5">
+        <div class="col-12">
+            <h2 class="mb-4">Why Choose Us?</h2>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 border-0 shadow-sm rounded-4">
+                <div class="card-body p-4">
+                    <div class="feature-icon mb-3 text-primary">
+                        <i class="bi bi-graph-up-arrow display-4"></i>
+                    </div>
+                    <h3 class="h5 mb-3">Price History Tracking</h3>
+                    <p class="text-muted mb-0">View price trends and historical data to make informed decisions about when to buy.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 border-0 shadow-sm rounded-4">
+                <div class="card-body p-4">
+                    <div class="feature-icon mb-3 text-primary">
+                        <i class="bi bi-shop display-4"></i>
+                    </div>
+                    <h3 class="h5 mb-3">Multi-Store Comparison</h3>
+                    <p class="text-muted mb-0">Compare prices across major electronics retailers to find the best deals.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 border-0 shadow-sm rounded-4">
+                <div class="card-body p-4">
+                    <div class="feature-icon mb-3 text-primary">
+                        <i class="bi bi-lightning-charge display-4"></i>
+                    </div>
+                    <h3 class="h5 mb-3">Real-Time Updates</h3>
+                    <p class="text-muted mb-0">Get the latest prices and availability information in real-time.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.category-card {
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+}
+
+.category-icon {
+    transition: transform 0.2s ease-in-out;
+}
+
+.category-card:hover .category-icon {
+    transform: scale(1.1);
+}
+
+.feature-icon {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    background-color: rgba(var(--bs-primary-rgb), 0.1);
+}
+</style>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+function quickSearch(category) {
+    window.location.href = `/products/search?query=${encodeURIComponent(category)}`;
+}
+
+document.getElementById('searchButton').addEventListener('click', () => {
+    const query = document.getElementById('searchInput').value.trim();
+    if (query) {
+        window.location.href = `/products/search?query=${encodeURIComponent(query)}`;
+    }
+});
+
+document.getElementById('searchInput').addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+        const query = e.target.value.trim();
+        if (query) {
+            window.location.href = `/products/search?query=${encodeURIComponent(query)}`;
+        }
+    }
+});
+</script>
+{% endblock %}
